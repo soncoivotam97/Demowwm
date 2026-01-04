@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TabHost android:id="@android:id/tabhost" android:layout_width="match_parent" android:layout_height="match_parent" app:layout_constraintBottom_toBottomOf="0" app:layout_constraintEnd_toEndOf="0" app:layout_constraintStart_toStartOf="0" app:layout_constraintTop_toTopOf="0">
+        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+            <FrameLayout android:id="@android:id/tabcontent" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ScrollView android:id="@+id/tab_home" android:layout_width="match_parent" android:layout_height="match_parent">
+                    <LinearLayout android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="24sp" android:textStyle="bold" android:id="@+id/textView" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="Cài đặt Việt Hóa cho Where Winds Meet" android:fontFamily="@font/montserrat_medium" android:textAlignment="center"/>
+                        <CheckBox android:id="@+id/cb_hotfix" android:layout_width="match_parent" android:layout_height="wrap_content" android:checked="true" android:text="Patch Hotfix (Sửa lỗi hiển thị)"/>
+                        <CheckBox android:id="@+id/cb_font" android:layout_width="match_parent" android:layout_height="wrap_content" android:checked="true" android:text="Patch Font (Cài font tiếng Việt)"/>
+                        <CheckBox android:id="@+id/cb_overwrite" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ghi đè Tiếng Đức thành Tiếng Anh"/>
+                        <CheckBox android:id="@+id/cb_unlock_fps" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mở khóa 60fps"/>
+                        <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp">
+                            <Button android:id="@+id/installBtn" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Cài đặt Việt Hóa"/>
+                            <Button android:id="@+id/btn_start_game" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Khởi động Game"/>
+                            <Button android:id="@+id/btn_uninstall" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Gỡ cài đặt Việt Hóa" android:backgroundTint="#d32f2f"/>
+                        </LinearLayout>
+                        <TextView android:textStyle="bold" android:layout_gravity="bottom" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Log:"/>
+                        <TextView android:layout_gravity="bottom" android:id="@+id/logTxt" android:padding="8dp" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="150dp" android:text=""/>
+                        <TextView android:textSize="12sp" android:gravity="center" android:layout_gravity="bottom" android:id="@+id/creditTxt" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Credit: SangTacViet Team"/>
+                    </LinearLayout>
+                </ScrollView>
+                <ScrollView android:id="@+id/tab_font" android:layout_width="match_parent" android:layout_height="match_parent">
+                    <LinearLayout android:orientation="vertical" android:padding="16dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:textStyle="bold" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Quản lý Font:"/>
+                        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                            <TextView android:textSize="16sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Font Chính (Giao diện, Hội thoại):"/>
+                            <Spinner android:id="@+id/sp_font1" android:layout_width="match_parent" android:layout_height="50dp"/>
+                            <TextView android:textSize="18sp" android:gravity="center" android:id="@+id/tv_preview1" android:padding="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="Mẫu hiển thị Font chữ Tiếng Việt"/>
+                            <TextView android:textSize="16sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Font Tiêu Đề:"/>
+                            <Spinner android:id="@+id/sp_font2" android:layout_width="match_parent" android:layout_height="50dp"/>
+                            <TextView android:textSize="18sp" android:gravity="center" android:id="@+id/tv_preview2" android:padding="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="Mẫu hiển thị Font chữ Tiếng Việt"/>
+                            <TextView android:textSize="16sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Font Nghệ Thuật:"/>
+                            <Spinner android:id="@+id/sp_font3" android:layout_width="match_parent" android:layout_height="50dp"/>
+                            <TextView android:textSize="18sp" android:gravity="center" android:id="@+id/tv_preview3" android:padding="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="Mẫu hiển thị Font chữ Tiếng Việt"/>
+                            <Button android:textSize="16sp" android:id="@+id/btn_add_font" android:layout_width="match_parent" android:layout_height="60dp" android:text="Thêm Font .ttf"/>
+                            <TextView android:textStyle="bold" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="Cài đặt nâng cao:"/>
+                            <CheckBox android:id="@+id/cb_shizuku" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Sử dụng Shizuku (Cần cài đặt ứng dụng Shizuku)"/>
+                            <TextView android:textStyle="bold" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="File dịch tùy chỉnh:"/>
+                            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                                <Button android:id="@+id/btn_select_map_en" android:layout_width="0dp" android:layout_height="wrap_content" android:text="Chọn map_en" android:layout_weight="1"/>
+                                <Button android:id="@+id/btn_remove_map_en" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4dp" android:text="Bỏ"/>
+                            </LinearLayout>
+                            <TextView android:textSize="12sp" android:id="@+id/tv_map_en_path" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Chưa chọn file"/>
+                            <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                                <Button android:id="@+id/btn_select_map_en_diff" android:layout_width="0dp" android:layout_height="wrap_content" android:text="Chọn map_en_diff" android:layout_weight="1"/>
+                                <Button android:id="@+id/btn_remove_map_en_diff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4dp" android:text="Bỏ"/>
+                            </LinearLayout>
+                            <TextView android:textSize="12sp" android:id="@+id/tv_map_en_diff_path" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Chưa chọn file"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+                <LinearLayout android:orientation="vertical" android:id="@+id/tab_map" android:layout_width="match_parent" android:layout_height="match_parent">
+                    <WebView android:id="@+id/map_webview" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                </LinearLayout>
+            </FrameLayout>
+            <TabWidget android:id="@android:id/tabs" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </TabHost>
+</androidx.constraintlayout.widget.ConstraintLayout>
